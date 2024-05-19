@@ -28,58 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.wlewo = new System.Windows.Forms.Button();
-            this.wprawo = new System.Windows.Forms.Button();
-            this.Opis = new System.Windows.Forms.TextBox();
+            this.components = new System.ComponentModel.Container();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.Start = new System.Windows.Forms.Button();
+            this.poleGry1 = new SpaceInvaderZ.PoleGry();
             this.SuspendLayout();
             // 
-            // wlewo
+            // timer1
             // 
-            this.wlewo.Location = new System.Drawing.Point(273, 384);
-            this.wlewo.Name = "wlewo";
-            this.wlewo.Size = new System.Drawing.Size(75, 23);
-            this.wlewo.TabIndex = 0;
-            this.wlewo.Text = "W lewo\r\n";
-            this.wlewo.UseVisualStyleBackColor = true;
-            this.wlewo.Click += new System.EventHandler(this.wlewo_Click);
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // wprawo
+            // Start
             // 
-            this.wprawo.Location = new System.Drawing.Point(470, 384);
-            this.wprawo.Name = "wprawo";
-            this.wprawo.Size = new System.Drawing.Size(75, 23);
-            this.wprawo.TabIndex = 1;
-            this.wprawo.Text = "W prawo\r\n";
-            this.wprawo.UseVisualStyleBackColor = true;
-            this.wprawo.Click += new System.EventHandler(this.wprawo_Click);
+            this.Start.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.Start.Location = new System.Drawing.Point(584, 688);
+            this.Start.Name = "Start";
+            this.Start.Size = new System.Drawing.Size(75, 23);
+            this.Start.TabIndex = 4;
+            this.Start.Text = "Reset";
+            this.Start.UseVisualStyleBackColor = false;
+            this.Start.Click += new System.EventHandler(this.Start_Click);
             // 
-            // Opis
+            // poleGry1
             // 
-            this.Opis.Location = new System.Drawing.Point(273, 358);
-            this.Opis.Name = "Opis";
-            this.Opis.Size = new System.Drawing.Size(272, 20);
-            this.Opis.TabIndex = 2;
+            this.poleGry1.BackColor = System.Drawing.Color.Navy;
+            this.poleGry1.BackgroundImage = global::SpaceInvaderZ.Properties.Resources.space;
+            this.poleGry1.Location = new System.Drawing.Point(12, 12);
+            this.poleGry1.Name = "poleGry1";
+            this.poleGry1.Size = new System.Drawing.Size(1220, 670);
+            this.poleGry1.TabIndex = 3;
+            this.poleGry1.Paint += new System.Windows.Forms.PaintEventHandler(this.poleGry1_Paint);
+            this.poleGry1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.poleGry1_MouseDown);
+            this.poleGry1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.poleGry1_MouseMove);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.Opis);
-            this.Controls.Add(this.wprawo);
-            this.Controls.Add(this.wlewo);
+            this.BackColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.ClientSize = new System.Drawing.Size(1244, 723);
+            this.Controls.Add(this.Start);
+            this.Controls.Add(this.poleGry1);
+            this.KeyPreview = true;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "SpaceInvaderZ";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button wlewo;
-        private System.Windows.Forms.Button wprawo;
-        private System.Windows.Forms.TextBox Opis;
+        private PoleGry poleGry1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button Start;
     }
 }
 
